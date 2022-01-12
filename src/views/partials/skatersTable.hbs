@@ -1,0 +1,30 @@
+<table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each skaters}}
+          <tr>
+            <th scope="row">{{this.id}}</th>
+            <td><img src="public/img/{{this.foto}}.jpg" alt="foto" class="img-thumbnail"></td>
+            <td>{{this.nombre}}</td>
+            <td>{{this.anos_experiencia}}</td>
+            <td>{{this.especialidad}}</td>
+            {{#if this.estado}}
+              <td class="text-success font-weight-bold">Aprobado</td>
+            {{else}}
+              <td class="text-warning font-weight-bold">En revisión</td>
+            {{/if}}
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <a href="/login">Iniciar Sesión</a> |
+      <a href="/registro">Registrarme</a>

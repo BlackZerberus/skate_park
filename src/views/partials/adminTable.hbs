@@ -1,0 +1,28 @@
+<table class="table w-50 m-auto table-dark" id="adminTable">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each skaters}}
+            <tr>
+              <th scope="row">{{this.id}}</th>
+              <td><img src="public/img/{{this.foto}}.jpg" alt="{{this.nombre}}-foto" ></td>
+              <td>{{this.nombre}}</td>
+              <td>{{this.anos_experiencia}}</td>
+              <td>{{this.especialidad}}</td>
+              {{#if this.estado}}
+                <td><input type="checkbox" class="form-check-input btn-success" disabled checked/></td>
+              {{else}}
+                <td><input type="checkbox" class="form-check-input btn-success" id="{{this.id}}" /></td>
+              {{/if}}
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
